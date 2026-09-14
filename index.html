@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohit Meerchandani | Corporate Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #f8f9fa; font-family: 'Inter', sans-serif; padding: 32px 20px; color: #111; }
+    .container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start; }
+    
+    /* LEFT SIDEBAR */
+    .sidebar { background: #fff; border-radius: 24px; padding: 32px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #f3f4f6; text-align: center; position: sticky; top: 20px; }
+    .avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #a855f7, #4f46e5); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 44px; font-weight: 800; }
+    h1 { font-size: 22px; font-weight: 800; margin: 0 0 6px; }
+    .role { font-size: 13px; color: #4f46e5; font-weight: 500; margin: 0 0 4px; }
+    .location { font-size: 12px; color: #9ca3af; margin-bottom: 20px; }
+    
+    .links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+    .pill { font-size: 11px; padding: 4px 10px; border-radius: 20px; background: #f3f4f6; color: #374151; text-decoration: none; font-weight: 500; }
+    
+    .side-section { border-top: 1px solid #f3f4f6; padding-top: 20px; text-align: left; margin-bottom: 20px; }
+    .side-label { font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .summary { font-size: 13px; color: #4b5563; line-height: 1.75; }
+    
+    .skill-cat { font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 7px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .tag { font-size: 11px; color: #374151; padding: 3px 9px; background: #f3f4f6; border-radius: 7px; font-weight: 500; }
+    
+    .available { padding: 10px 14px; background: #f0fdf4; border-radius: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 500; color: #166534; }
+    .available .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; }
+    
+    /* RIGHT MAIN */
+    .main { display: flex; flex-direction: column; gap: 20px; }
+    .card { background: #fff; border-radius: 24px; padding: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #f3f4f6; }
+    .card-title { font-size: 17px; font-weight: 800; margin: 0 0 20px; display: flex; align-items: center; gap: 8px; }
+    
+    .exp-item { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #f3f4f6; }
+    .exp-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .exp-head { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+    .exp-role { font-size: 16px; font-weight: 800; margin: 0 0 5px; }
+    .exp-company { font-size: 13px; color: #4f46e5; font-weight: 500; }
+    .exp-company span { color: #9ca3af; font-weight: 400; }
+    .exp-date { font-size: 12px; color: #6b7280; background: #f3f4f6; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+    .bullets { margin: 0; padding: 0 0 0 18px; }
+    .bullets li { font-size: 14px; color: #4b5563; line-height: 1.7; margin-bottom: 7px; }
+    
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .proj-card { padding: 20px; border: 1px solid #f3f4f6; border-radius: 16px; }
+    .proj-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 9px; }
+    .proj-title { font-size: 15px; font-weight: 800; margin: 0; }
+    .proj-links a { font-size: 12px; color: #4f46e5; text-decoration: none; font-weight: 600; margin-left: 8px; }
+    .proj-desc { font-size: 13px; color: #6b7280; line-height: 1.65; margin: 0 0 12px; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .proj-tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; background: #e0e7ff; color: #4f46e5; font-weight: 600; }
+    
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="sidebar">
+      <div class="avatar">M</div>
+      <h1>Mohit Meerchandani</h1>
+      <div class="role">Business Analyst Intern</div>
+      <div class="location">📍 Jaipur , Rajasthan 302012</div>
+
+      <div class="links">
+        <a href="mailto:mohit.meerchandani@example.com" class="pill">✉ Email</a>
+        <span class="pill">📞 +91 7378093161</span>
+        
+        
+        
+      </div>
+
+      <div class="side-section">
+        <div class="side-label">About</div>
+        <p class="summary">Mohit Meerchandani is a Computer Science student with a strong aptitude for data analysis, machine learning, and business intelligence, currently pursuing a Bachelor of Science degree. He gained practical experience as a Business Analyst Intern, where he successfully managed data transformation, improved data accuracy, and developed dynamic dashboards. Mohit is proficient in Python, SQL, Power BI, and deep learning, demonstrating his skills through impactful projects in forecasting, disease detection, and database design.</p>
+      </div>
+
+      <div class="side-section">
+        <div class="side-label">Skills</div>
+        <div class="skill-cat">Programming Languages</div>
+        <div class="tags">
+          <span class="tag">Python (Numpy, Pandas, Matplotlib, Scikit-Learn, Keras)</span><span class="tag">C/C++</span><span class="tag">SQL (MySQL, Post-greSQL)</span>
+        </div>
+        <div class="skill-cat">Business Intelligence</div>
+        <div class="tags">
+          <span class="tag">Power Bi</span><span class="tag">Tableau</span><span class="tag">Excel(Advanced)</span><span class="tag">ETL Processing</span><span class="tag">Dashboard Development</span>
+        </div>
+        <div class="skill-cat">Tools &amp; Frameworks</div>
+        <div class="tags">
+          <span class="tag">Git</span><span class="tag">Github</span><span class="tag">Google Collab</span><span class="tag">Kaggle</span><span class="tag">PowerPoint</span>
+        </div>
+        <div class="skill-cat">Analytics &amp; Modeling</div>
+        <div class="tags">
+          <span class="tag">Business Analytics</span><span class="tag">A/B Testing</span><span class="tag">KPI Reporting</span><span class="tag">Database Management</span><span class="tag">GTM Strategies</span>
+        </div>
+        <div class="skill-cat">AI &amp; Generative AI Tools</div>
+        <div class="tags">
+          <span class="tag">ChatGPT (Code Interpreter/ADA)</span><span class="tag">Gemini</span><span class="tag">Claude</span><span class="tag">Perplexity</span>
+        </div>
+        <div class="skill-cat">Soft Skills</div>
+        <div class="tags">
+          <span class="tag">Problem Solving</span><span class="tag">Storytelling With Data</span><span class="tag">Collaboration</span><span class="tag">Critical Thinking</span>
+        </div>
+      </div>
+
+
+      <div class="available">
+        <span class="dot"></span> Available for new opportunities
+      </div>
+    </div>
+
+    <div class="main">
+      <section class="card">
+        <h2 class="card-title">💼 Experience</h2>
+        <div class="exp-item">
+          <div class="exp-head">
+            <div>
+              <h3 class="exp-role">Business Analyst Intern</h3>
+              <div class="exp-company">KultureHire</div>
+            </div>
+            <div class="exp-date">2024-09 – 2024-11</div>
+          </div>
+          <ul class="bullets">
+            <li>Collaborated with cross-functional stakeholders to define project goals.</li><li>Cleaned and transformed over 10,000 data points using Excel and SQL, increasing data accuracy by 95%</li><li>Designed and deployed dynamic Excel dashboards that visualized trends, enhancing decision-making efficiency by 40%</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="card-title">🎓 Education</h2>
+        <div class="exp-item" style="border-bottom: 1px solid #f3f4f6; margin-bottom: 20px; padding-bottom: 20px;">
+          <div class="exp-head" style="margin: 0;">
+            <div>
+              <h3 class="exp-role">Bachelor of Science in Computer Science</h3>
+              <div class="exp-company">Indian Institute of Information Technology, Kota</div>
+              <div style="font-size:12px; color:#9ca3af; margin-top:3px;">GPA: 8.1</div>
+            </div>
+            <div class="exp-date">2022-11 – 2026-05</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="card-title">🚀 Projects</h2>
+        <div class="proj-grid">
+          <div class="proj-card">
+            <div class="proj-head">
+              <h3 class="proj-title">Interactive Business and Weather Forecasting Dashboard</h3>
+              <div class="proj-links">
+                
+                
+              </div>
+            </div>
+            <p class="proj-desc">Developed an interactive dashboard for real-time weather and business data analysis, automating data pipelines and delivering KPI-driven reports to improve decision-making.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span><span class="proj-tag">SQL</span><span class="proj-tag">PowerBI</span><span class="proj-tag">API Integration</span>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-head">
+              <h3 class="proj-title">Plant Disease Detection Using Deep Learning</h3>
+              <div class="proj-links">
+                
+                
+              </div>
+            </div>
+            <p class="proj-desc">Engineered a deep learning model for high-accuracy plant disease classification, integrating location-based weather data for tailored predictions and solutions.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span><span class="proj-tag">Deep Learning</span><span class="proj-tag">Tensorflow</span><span class="proj-tag">Keras</span><span class="proj-tag">CNN</span>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-head">
+              <h3 class="proj-title">Employee Management Database Project</h3>
+              <div class="proj-links">
+                
+                
+              </div>
+            </div>
+            <p class="proj-desc">Designed and implemented a robust, normalized relational database for employee management, using advanced SQL queries to extract insights and ensure data integrity.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">MySQL</span><span class="proj-tag">Database Design</span><span class="proj-tag">SQL Queries</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="card">
+        <h2 class="card-title">🏆 Certifications</h2>
+        <ul class="bullets">
+          <li>Completed a 60-day internship at KultureHire.</li><li>Completed Accenture Data Analytics Simulation on Forage.</li><li>Completed IBM’s Introduction to Data Analytics course on Coursera</li><li>Earned SQL50 badge on LeetCode, Silver Badge (4 Star) and Advanced SQL Certificate at HackerRank</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
